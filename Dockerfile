@@ -11,13 +11,17 @@ COPY package*.json ./
 # Build the JavaScript Application
 RUN npm ci
 
+# Copy from host to docker images
 COPY . .
 RUN npm run build
 
+#Use lightweight image for serving the app
 FROM node:18-alpine
 
+#Workdirectory 
 WORKDIR /app
 
+#COPY only necessary file from builder stage
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
