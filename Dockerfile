@@ -16,7 +16,7 @@ RUN npm install && npm run build
 
 
 # Expose the running port number
-EXPOSE 3000
+EXPOSE 5173
 
 # Start the application
 CMD ["npm", "run", "dev"]
