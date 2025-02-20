@@ -6,7 +6,6 @@ WORKDIR /app
 
 
 # Copy project files from host to inside docker working directory
-COPY package.json ./
 COPY package*.json ./
 
 # Build the JavaScript Application
