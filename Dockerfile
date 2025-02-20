@@ -11,7 +11,7 @@ COPY package*.json ./
 # Build the JavaScript Application
 RUN npm ci
 
-# Copy from host to docker images
+# Copy from host to docker images and build
 COPY . .
 RUN npm run build
 
@@ -22,18 +22,14 @@ FROM node:18-alpine
 WORKDIR /app
 
 #COPY only necessary file from builder stage
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/src ./src
-COPY --from=builder /app/index.css .
-COPY --from=builder /app/index.html .
-COPY --from=builder /app/vite.config.js .
+
+#Install npm server globally
+RUN npm install -g serve
 
 
 # Expose the running port number
-EXPOSE 5173
+EXPOSE 3000
 
 # Start the application
-CMD ["npm", "run", "dev"]
+CMD ["serve", "-s", "dist"]
