@@ -18,7 +18,14 @@ This project focuses on **containerizing a Vite application** using **Docker** a
 - Enabled automatic restart using:
   ```yaml
   restart: always
-  ```
+
+### ✅ **Pushing image to docker hub**
+- Pushed docker image to docker hub repository
+<img src="images/pushdockerimagecommand.png" width="200">
+<img src="images/DockerHubSnapshot.png" width="200">
+  
+`  
+```
 
 ## 📂 Repository Management
 ### 🔹 Git Commands Used
