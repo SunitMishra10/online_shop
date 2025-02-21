@@ -70,7 +70,7 @@ apk add --no-cache nginx
 
 ## 🎥 **Demo Video**
 📌 **Watch the demonstration here:**  
-[Hackathon Phase 1 Demo (3-5 min)](https://github.com/SunitMishra10/online_shop/blob/Hackathon/Recording%20for%20online%20shopping%20app.zip)
+[Hackathon Phase 1 Demo (3-5 min)](https://github.com/SunitMishra10/online_shop/blob/Hackathon/Recording.mp4)
 
 ---
 
